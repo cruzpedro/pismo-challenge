@@ -23,6 +23,12 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 - Cucumber
 - Flyway
 
+### Arquitetura do Projeto
+
+O domínio ```transaction``` é um projeto maven multi-módulo que é apresentado a seguir:
+- ```transaction-api``` este módulo gera um artefato e é responsável por tratar a comunicação via REST.
+- ```transaction-core``` este módulo **não** gera um artefato e é responsável por tratar toda a regra de negócio.
+
 ### Rodando testes
 
 Para executar todos os Cenários do Cucumber, basta executar o seguinte comando no prompt de comando:
