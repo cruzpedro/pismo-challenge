@@ -12,7 +12,6 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         connection:
           driver_class: org.postgresql.Driver
         show_sql: false
