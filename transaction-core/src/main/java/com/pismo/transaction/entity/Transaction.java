@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "tb_operation_type")
+@Table(name = "tb_transaction")
 @AllArgsConstructor
 @NoArgsConstructor
 

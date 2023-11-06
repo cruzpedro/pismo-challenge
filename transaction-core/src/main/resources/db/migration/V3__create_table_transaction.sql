@@ -14,7 +14,7 @@ create table tb_transaction
         constraint tb_transaction_id_operation_type_fk
             references tb_operation_type,
     dat_event timestamp not null,
-    num_amount double precision not null
+    num_amount numeric not null
 );
 
 alter table tb_transaction

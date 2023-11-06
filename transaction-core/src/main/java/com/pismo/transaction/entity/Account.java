@@ -20,7 +20,7 @@ import org.hibernate.annotations.Parameter;
 public class Account {
 
     @Id
-    @GenericGenerator(name = "sq_post_id", parameters = {
+    @GenericGenerator(name = "sq_account_id", parameters = {
             @Parameter(name = "sequence", value = "sq_account_id"),
             @Parameter(name = "increment_size", value = "1")
     })
