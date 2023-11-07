@@ -16,7 +16,7 @@ services:
       - postgres
 
   server:
-    container_name: pismo-challenge
+    container_name: transaction-api
     depends_on:
       - postgres
     build: .
