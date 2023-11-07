@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class AccountResponse implements Serializable {
 
     @JsonProperty("account_id")
-    private int accountId;
+    private Long accountId;
 
     @JsonProperty("document_number")
-    private int documentNumber;
+    private Long documentNumber;
 
 }

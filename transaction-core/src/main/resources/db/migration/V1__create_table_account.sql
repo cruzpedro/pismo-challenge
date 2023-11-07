@@ -7,7 +7,7 @@ create table tb_account
     id_account      bigint      not null
         constraint tb_account_pkey
             primary key,
-    int_document int not null
+    int_document bigint not null
         constraint tb_account_accountname_unique
             unique
 );

@@ -7,12 +7,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 @Data
+@Builder
 @Entity
 @Table(name = "tb_account")
 @AllArgsConstructor
@@ -29,6 +31,6 @@ public class Account {
     private Long id;
 
     @Column(name = "int_document", nullable = false)
-    private Integer document;
+    private Long document;
 
 }
