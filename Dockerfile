@@ -1,7 +1,7 @@
 FROM openjdk:17-alpine as up-stage
 
 # The application's jar file
-ARG JAR_FILE=pismo-challenge/target/*.jar
+ARG JAR_FILE=transaction-api/target/*.jar
 
 # Add a volume pointing to /tmp
 VOLUME /tmp
