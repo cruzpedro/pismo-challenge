@@ -9,7 +9,6 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface AccountMapperDTO {
 
-
     @Mapping(source = "documentNumber", target = "documentNumber")
     @Mapping(target = "accountId", ignore = true)
     AccountDTO toDTO(AccountCreateRequest request);

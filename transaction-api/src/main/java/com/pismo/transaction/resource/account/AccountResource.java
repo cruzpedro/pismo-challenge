@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/accounts")
 public class AccountResource {
 
-    private final AccountMapperDTO accountMapperDTO;
     private final AccountService accountService;
+    private final AccountMapperDTO accountMapperDTO;
 
     @PostMapping
     public AccountResponse create(@Valid @RequestBody AccountCreateRequest request) {

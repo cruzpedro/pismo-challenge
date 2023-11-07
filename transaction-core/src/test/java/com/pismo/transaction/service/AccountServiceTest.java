@@ -6,7 +6,6 @@ import com.pismo.transaction.exception.TransactionNoResultException;
 import com.pismo.transaction.mapper.AccountMapperImpl;
 import com.pismo.transaction.repository.AccountRepository;
 import com.pismo.transaction.service.impl.AccountServiceImpl;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,6 +14,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -43,8 +44,8 @@ public class AccountServiceTest {
                 .thenReturn(mockAccount());
 
         final AccountDTO accountDTO = accountService.create(dto);
-        Assertions.assertEquals(documentNumber, accountDTO.getDocumentNumber());
-        Assertions.assertEquals(expectedId, accountDTO.getAccountId());
+        assertEquals(documentNumber, accountDTO.getDocumentNumber());
+        assertEquals(expectedId, accountDTO.getAccountId());
     }
 
     @Test
@@ -56,8 +57,8 @@ public class AccountServiceTest {
                 .thenReturn(Optional.of(mockAccount()));
 
         final AccountDTO accountDTO = accountService.findById(accountId);
-        Assertions.assertEquals(accountId, accountDTO.getAccountId());
-        Assertions.assertEquals(expectedDocumentNumber, accountDTO.getDocumentNumber());
+        assertEquals(accountId, accountDTO.getAccountId());
+        assertEquals(expectedDocumentNumber, accountDTO.getDocumentNumber());
     }
 
     @Test
@@ -67,7 +68,7 @@ public class AccountServiceTest {
         when(accountRepository.findById(accountId))
                 .thenReturn(Optional.empty());
 
-        Assertions.assertThrows(TransactionNoResultException.class, () -> accountService.findById(accountId));
+        assertThrows(TransactionNoResultException.class, () -> accountService.findById(accountId));
     }
 
     private Account mockAccount() {

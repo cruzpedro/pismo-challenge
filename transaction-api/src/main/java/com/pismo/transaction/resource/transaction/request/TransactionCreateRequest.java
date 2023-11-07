@@ -1,6 +1,7 @@
 package com.pismo.transaction.resource.transaction.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,12 +15,15 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class TransactionCreateRequest {
 
+    @NotNull
     @JsonProperty("account_id")
-    private int accountId;
+    private Long accountId;
 
+    @NotNull
     @JsonProperty("operation_type_id")
-    private int operationTypeId;
+    private Long operationTypeId;
 
+    @NotNull
     private BigDecimal amount;
 
 }
