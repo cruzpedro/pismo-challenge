@@ -20,4 +20,7 @@ public class AccountResponse implements Serializable {
     @JsonProperty("document_number")
     private Long documentNumber;
 
+    @JsonProperty("num_available_credit_limit")
+    private Long availableCreditLimit;
+
 }

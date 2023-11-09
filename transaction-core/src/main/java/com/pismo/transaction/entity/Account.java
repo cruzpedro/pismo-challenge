@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @Entity
@@ -32,5 +34,8 @@ public class Account {
 
     @Column(name = "int_document", nullable = false)
     private Long document;
+
+    @Column(name = "num_available_credit_limit")
+    private BigDecimal availableCreditLimit;
 
 }

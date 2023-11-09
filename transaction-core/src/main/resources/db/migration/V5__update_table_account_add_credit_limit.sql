@@ -1,0 +1,1 @@
+ALTER TABLE tb_account ADD COLUMN num_available_credit_limit numeric;

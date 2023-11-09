@@ -10,7 +10,12 @@ public interface AccountMapper {
 
     @Mapping(source = "accountId", target = "id")
     @Mapping(source = "documentNumber", target = "document")
-    Account toEntity(AccountDTO accountDTO);
+    @Mapping(target = "availableCreditLimit", expression = "java(java.math.BigDecimal.ZERO)")
+    Account toEntityCreate(AccountDTO accountDTO);
+
+    @Mapping(source = "accountId", target = "id")
+    @Mapping(source = "documentNumber", target = "document")
+    Account toEntityUpdate(AccountDTO accountDTO);
 
     @Mapping(source = "id", target = "accountId")
     @Mapping(source = "document", target = "documentNumber")

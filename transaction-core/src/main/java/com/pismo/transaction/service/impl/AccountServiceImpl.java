@@ -24,7 +24,7 @@ public class AccountServiceImpl implements AccountService {
         log.info("C={}, method=create, accountDTO={}", getClass().getSimpleName(), accountDTO);
 
         try {
-            final Account account = accountRepository.save(accountMapper.toEntity(accountDTO));
+            final Account account = accountRepository.save(accountMapper.toEntityCreate(accountDTO));
             return accountMapper.toDTO(account);
         } catch (Exception e) {
             log.error("C={}, method=create, accountDTO={}, error={}, e={}",
@@ -45,6 +45,19 @@ public class AccountServiceImpl implements AccountService {
         } catch (Exception e) {
             log.error("C={}, method=findById accountId={}, message={}, e={}",
                     getClass().getSimpleName(), accountId, e.getMessage(), e);
+            throw e;
+        }
+    }
+
+    @Override
+    public void update(AccountDTO accountDTO) {
+        log.info("C={}, method=update, accountDTO={}", getClass().getSimpleName(), accountDTO);
+
+        try {
+            accountRepository.save(accountMapper.toEntityUpdate(accountDTO));
+        } catch (Exception e) {
+            log.error("C={}, method=update accountDTO={}, message={}, e={}",
+                getClass().getSimpleName(), accountDTO, e.getMessage(), e);
             throw e;
         }
     }

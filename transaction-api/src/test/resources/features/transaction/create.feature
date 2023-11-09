@@ -14,9 +14,10 @@ Feature: Transaction creation feature
     Then it should return http status code <statusCode>
     Examples:
       | accountId | operationTypeId | amount | statusCode |
-      | 1         | 1               | 100    | 200        |
-      | 1         | 2               | 100    | 200        |
-      | 2         | 3               | 100    | 200        |
+      | 1         | 1               | 10     | 200        |
+      | 1         | 4               | 20     | 200        |
+      | 1         | 2               | 5      | 200        |
+      | 1         | 3               | 100    | 500        |
       | 2         | 4               | 100    | 200        |
       |           | 1               | 100    | 400        |
       | 1         |                 | 100    | 400        |
